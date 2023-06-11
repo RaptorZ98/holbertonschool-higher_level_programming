@@ -5,4 +5,6 @@ def best_score(a_dictionary):
         for num in a_dictionary:
             if res < a_dictionary[num]:
                 res = a_dictionary[num]
-    return res
+        return res
+    else:
+        return None
