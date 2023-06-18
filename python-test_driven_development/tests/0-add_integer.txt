@@ -6,3 +6,35 @@
 >>> add_integer(4, "Hola")
 Traceback (most recent call last):
 TypeError: b must be an integer
+
+>>> add_integer(4, "Hola")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer(4, "Hola")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer(4, "Hola")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer(4, "Hola")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer(4, "Hola")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer(4, "Hola")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer(4, "Hola")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer(4, "Hola")
+Traceback (most recent call last):
+TypeError: b must be an integer
