@@ -6,10 +6,10 @@ class Square:
     """ class Square makes Square"""
 
     def __init__(self, size=0):
-        if (isinstance, int):
+        if isinstance(size, int):
             if size >= 0:
                 self.__size = size
             else:
-                raise ValueError('size must be >= 0')
+                raise ValueError("size must be >= 0")
         else:
-            raise TypeError('size must be an integer')
+            raise TypeError("size must be an integer")
