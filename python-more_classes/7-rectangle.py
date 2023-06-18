@@ -56,7 +56,7 @@ class Rectangle:
         if self.__width != 0 and self.__height != 0:
             for n in range(self.__height):
                 for i in range(self.__width):
-                    print("#", end="")
+                    print(f"{Rectangle.print_symbol}", end="")
                 if n == self.height - 1:
                     print("", end="")
                 else:
