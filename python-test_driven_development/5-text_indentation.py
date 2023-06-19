@@ -13,7 +13,7 @@ def text_indentation(text):
         else:
             ckeck = 0
         if letter in ['.', '!', ':']:
-            print(f"{letter}")
+            print(f"{letter}\n")
             check = 1
         else:
             print(f"{letter}", end="")
