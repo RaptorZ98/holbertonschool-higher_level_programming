@@ -9,12 +9,12 @@ def text_indentation(text):
     check = 0
     for letter in text:
         if check == 1 and letter == " ":
-            letter = ""
-        elif check == 1 and letter != " ":
-            ckeck = 0
             pass
-        if letter in ['.', '!', ':']:
-            print(f"{letter}\n")
-            check = 1
         else:
-            print(f"{letter}", end="")
+            if letter in ['.', '!', ':']:
+                print(f"{letter}\n")
+                check = 1
+            else:
+                print(f"{letter}", end="")
+            if check == 1:
+                check = 0
