@@ -11,7 +11,7 @@ def text_indentation(text):
         if check == 1 and letter == " ":
             pass
         else:
-            if letter in ['.', '!', ':']:
+            if letter in ['.', '?', ':']:
                 print(f"{letter}\n")
                 check = 1
             else:
