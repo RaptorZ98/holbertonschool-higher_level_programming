@@ -25,6 +25,5 @@ def matrix_divided(matrix, div):
         raise ZeroDivisionError("division by zero")
     newMatrix = matrix.copy()
     for i in range(len(matrix)):
-        for n in range(len(matrix[i])):
-            newMatrix[i][n] = round(matrix[i][n] / div, 2)
+        newMatrix[i] = list(map(lambda x: round(x / div, 2), matrix[i]))
     return newMatrix
