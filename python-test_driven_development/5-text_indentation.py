@@ -10,8 +10,9 @@ def text_indentation(text):
     for letter in text:
         if check == 1 and letter == " ":
             letter = ""
-        else:
+        elif check == 1 and letter != " ":
             ckeck = 0
+            pass
         if letter in ['.', '!', ':']:
             print(f"{letter}\n")
             check = 1
