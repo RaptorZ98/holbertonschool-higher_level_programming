@@ -8,13 +8,12 @@ def text_indentation(text):
         raise TypeError("text must be a string")
     check = 0
     for letter in text:
-        if check == 1 and letter == " ":
-            pass
+        if check == 1 and letter == ' ':
+            letter = ""
         else:
-            if letter in ['.', '?', ':']:
-                print(f"{letter}\n")
-                check = 1
-            else:
-                print(f"{letter}", end="")
-            if check == 1:
-                check = 0
+            check = 0
+        if letter in ['.', '?', ':']:
+            check = 1
+            print(f"{letter}\n")
+        else:
+            print(letter, end="")  
