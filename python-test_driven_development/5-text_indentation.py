@@ -16,4 +16,4 @@ def text_indentation(text):
             check = 1
             print(f"{letter}\n")
         else:
-            print(letter, end="")  
+            print(letter, end="")
