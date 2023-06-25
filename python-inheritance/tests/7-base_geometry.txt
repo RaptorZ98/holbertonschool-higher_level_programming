@@ -1,0 +1,124 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+>>> bg = BaseGeometry()
+
+>>> bg.area(3, 4)
+Traceback (most recent call last):
+    ...
+TypeError: area() takes 1 positional argument but 3 were given
+
+>>> bg.area()
+Traceback (most recent call last):
+    ...
+Exception: area() is not implemented
+
+>>> bg.area(67)
+Traceback (most recent call last):
+   ...
+TypeError: area() takes 1 positional argument but 2 were given
+
+>>> bg.integer_validator("name", {"A": 6, "b": 7})
+Traceback (most recent call last):
+    ...
+TypeError: name must be an integer
+
+>>> bg.integer_validator("name", {6, 7, 9})
+Traceback (most recent call last):
+    ...
+TypeError: name must be an integer
+
+>>> bg.integer_validator("name", (6, 7, 15))
+Traceback (most recent call last):
+    ...
+TypeError: name must be an integer
+
+>>> bg.integer_validator([6], 56, 9)
+Traceback (most recent call last):
+    ...
+TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+>>> bg.integer_validator(None)
+Traceback (most recent call last):
+    ...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+>>> bg.integer_validator()
+Traceback (most recent call last):
+   ...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+>>> bg.integer_validator("name", "name2")
+Traceback (most recent call last):
+    ...
+TypeError: name must be an integer
+
+>>> bg.integer_validator("name", -45)
+Traceback (most recent call last):
+    ...
+ValueError: name must be greater than 0
+
+>>> bg.integer_validator("name", 0)
+Traceback (most recent call last):
+    ...
+ValueError: name must be greater than 0
+
+>>> bg.integer_validator("name", 45)
+
+>>> bg.integer_validator("name", [3, 7])
+Traceback (most recent call last):
+    ...
+TypeError: name must be an integer
+
+>>> bg.integer_validator("name")
+Traceback (most recent call last):
+    ...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+>>> bg.integer_validator("name", None)
+Traceback (most recent call last):
+    ...
+TypeError: name must be an integer
+
+>>> bg.integer_validator("name", )
+Traceback (most recent call last):
+    ...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+>>> bg.integer_validator("name", float("NaN"))
+Traceback (most recent call last):
+    ...
+TypeError: name must be an integer
+
+>>> bg.integer_validator("name", float("inf"))
+Traceback (most recent call last):
+    ...
+TypeError: name must be an integer
+
+>>> bg.integer_validator("name", 8.45)
+Traceback (most recent call last):
+    ...
+TypeError: name must be an integer
+
+>>> bg.integer_validator(56, "8.45")
+Traceback (most recent call last):
+    ...
+TypeError: 56 must be an integer
+
+>>> bg.integer_validator(56, 3456)
+
+>>> bg.integer_validator(None, "8.45")
+Traceback (most recent call last):
+    ...
+TypeError: None must be an integer
+
+>>> bg.integer_validator(None, 6789)
+
+>>> bg.integer_validator(None, [5])
+Traceback (most recent call last):
+    ...
+TypeError: None must be an integer
+
+>>> bg.integer_validator("name", True)
+Traceback (most recent call last):
+    ...
+TypeError: name must be an integer
