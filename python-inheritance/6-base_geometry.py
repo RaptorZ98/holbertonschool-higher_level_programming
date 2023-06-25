@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ base geo """
 
+
 class BaseGeometry:
     """ base geo """
     def area(self):
