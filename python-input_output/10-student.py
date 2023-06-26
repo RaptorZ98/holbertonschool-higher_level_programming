@@ -16,7 +16,7 @@ class Student:
             i = 0
             for att in self.__dict__:
                 if att in attrs:
-                    new_dic[i] = att
+                    new_dic[att] = self.__dict__.get(att)
                     i += 1
             return new_dic
         else:
