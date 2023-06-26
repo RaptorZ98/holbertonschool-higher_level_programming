@@ -8,11 +8,8 @@ ljf = __import__('6-load_from_json_file').load_from_json_file
 
 
 try:
-    list = ljf(list, "add_item.json")
+    list = ljf("add_item.json")
 except FileNotFoundError:
     list = []
 
-for argument in sys.argv:
-    list.append(argument)
-
-sjf(list, "add_item.json")
+sjf(list + sys.argv[1:], "add_item.json")
