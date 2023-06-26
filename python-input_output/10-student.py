@@ -13,11 +13,9 @@ class Student:
     def to_json(self, attrs=None):
         if type(attrs) == list:
             new_dic = {}
-            i = 0
             for att in self.__dict__:
                 if att in attrs:
                     new_dic[att] = self.__dict__.get(att)
-                    i += 1
             return new_dic
         else:
             return self.__dict__
