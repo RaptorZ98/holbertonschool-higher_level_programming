@@ -8,7 +8,7 @@ ljf = __import__('6-load_from_json_file').load_from_json_file
 
 
 try:
-    list = ljf("add_item.json")
+    list = ljf(list, "add_item.json")
 except FileNotFoundError:
     list = []
 
