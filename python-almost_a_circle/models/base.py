@@ -8,7 +8,7 @@ class Base:
 
     def __init__(self, id=None):
         """ init of class base """
-        if id is not None:
+        if id is None:
             self.id = id
         else:
             self.__nb_objects += 1
