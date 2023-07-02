@@ -99,7 +99,7 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """ update method """
-        if args is not None:
+        if args is not None and len(args) != 0:
             size = len(args)
             if size >= 1:
                 self.id = args[0]
