@@ -36,3 +36,21 @@ class Base:
                 for obj in list_objs:
                     list.append(obj.to_dictionary())
             f.write(cls.to_json_string(list))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ from json to string """
+        if json_string is None or not json_string:
+            return []
+        else:
+            return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ create instance """
+        if cls.__name__ == "Square":
+            instance = cls(1)
+        elif cls.__name__ == "Rectangle":
+            instance = cls(1, 2)
+        instance.update(dictionary)
+        return instance
