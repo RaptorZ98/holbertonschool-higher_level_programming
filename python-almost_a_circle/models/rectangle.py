@@ -77,6 +77,10 @@ class Rectangle(Base):
         else:
             raise TypeError("y must be an integer")
 
+    def area(self):
+        """ area of the rectangle """
+        return self.__height * self.__width
+
     def display(self):
         """ display the rectangle """
         for spaces in range(self.__y):
@@ -92,3 +96,17 @@ class Rectangle(Base):
         """ str str """
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} \
 - {self.__width}/{self.__height}"
+
+    def update(self, *args):
+        """ update method """
+        size = len(args)
+        if size >= 1:
+            self.id = args[0]
+        if size >= 2:
+            self.__width = args[1]
+        if size >= 3:
+            self.__height = args[2]
+        if size >= 4:
+            self.__x = args[3]
+        if size >= 5:
+            self.__y = args[4]
