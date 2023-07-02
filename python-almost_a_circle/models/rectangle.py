@@ -76,3 +76,14 @@ class Rectangle(Base):
                 raise ValueError("y must be >= 0")
         else:
             raise TypeError("y must be an integer")
+
+    def display(self):
+        """ display the rectangle """
+        for lines in range(self.__height):
+            for parts in range(self.__width):
+                print("#", end="")
+            print
+
+    def __str__(self):
+        return f"[Rectangle] ({Base.id}) {self.__x}/{self.__y}\
+            - {self.__width}/{self.__height}"
