@@ -3,6 +3,7 @@
 import unittest
 from models.base import Base
 
+
 class TestBase(unittest.TestCase):
     """ """
     def test_id(self):
@@ -21,7 +22,7 @@ class TestBase(unittest.TestCase):
         self.assertEqual(json_str, "[]")
         json_str2 = Base.to_json_string([])
         self.assertEqual(json_str2, "[]")
-        dict_list3 = [ { 'id': 12 }]
+        dict_list3 = [{'id': 12}]
         json_str3 = Base.to_json_string(dict_list3)
         self.assertEqual(json_str3, '[{"id": 12}]')
 
@@ -31,6 +32,6 @@ class TestBase(unittest.TestCase):
         self.assertEqual(dict_list, [])
         dict_list2 = Base.from_json_string("[]")
         self.assertEqual(dict_list2, [])
-        json_str3 = '[{ "id": 89 }]'
+        json_str3 = '[{"id": 89}]'
         dict_list3 = Base.from_json_string(json_str3)
-        self.assertEqual(dict_list3, [{ "id": 89 }])
+        self.assertEqual(dict_list3, [{"id": 89}])

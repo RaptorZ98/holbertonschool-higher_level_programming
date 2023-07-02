@@ -7,6 +7,7 @@ import io
 import sys
 import os
 
+
 class TestRectangle(unittest.TestCase):
     """tests for rectangle class """
     def test_rectangle_args(self):
@@ -89,7 +90,8 @@ class TestRectangle(unittest.TestCase):
         """the rectangle is converted to a dictionary"""
         r1 = Rectangle(10, 2, 1, 9, 22)
         r1_dictionary = r1.to_dictionary()
-        self.assertEqual(r1_dictionary, {'x': 1, 'y': 9, 'id': 22, 'height': 2, 'width': 10})
+        self.assertEqual(r1_dictionary,
+                         {'x': 1, 'y': 9, 'id': 22, 'height': 2, 'width': 10})
 
     def test_rectangle_update(self):
         """update changes each argument for rectangle"""
@@ -99,7 +101,7 @@ class TestRectangle(unittest.TestCase):
 
     def test_rectangle_create(self):
         """create new instance of rectangle with args as parameters"""
-        r1 = Rectangle.create(**{ 'id': 89 })
+        r1 = Rectangle.create(**{'id': 89})
         self.assertEqual(r1.id, 89)
 
     def test_rectangle_save_to_file_none(self):
@@ -124,5 +126,6 @@ class TestRectangle(unittest.TestCase):
         list_rectangles_input = [r1]
         Rectangle.save_to_file(list_rectangles_input)
         list_rectangles_output = Rectangle.load_from_file()
-        self.assertEqual(str(list_rectangles_output[0]), '[Rectangle] (88) 2/8 - 10/7')
+        self.assertEqual(str(list_rectangles_output[0]),
+                         '[Rectangle] (88) 2/8 - 10/7')
         os.remove("Rectangle.json")
