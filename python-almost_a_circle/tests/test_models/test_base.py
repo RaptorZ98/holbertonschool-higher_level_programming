@@ -42,7 +42,7 @@ class BaseTest(unittest.TestCase):
         self.assertEqual(b2.id, 0)
         self.assertEqual(b3.id, 1)
 
-    """def test_15_1(self):
+    def test_15_1(self):
         ''' Test to_json_string method '''
         self.set_zero()
         r = Rectangle(10, 7, 2, 8)
@@ -51,27 +51,27 @@ class BaseTest(unittest.TestCase):
         self.assertTrue(type(r_dict) is dict)
         self.assertTrue(type(json_dictionary) is str)
         self.assertEqual(
-            json_dictionary, '[{"id": 1, "width": 10, \
-"height": 7, "x": 2, "y": 8}]'
+            json_dictionary, '[{"x": 2, "y": 8, "id": 1,\
+ "height": 7, "width": 10}]'
         )
-"""
+
     def test_15_2(self):
         ''' More to_json_string tests '''
         json_dictionary = Base.to_json_string([])
         self.assertTrue(type(json_dictionary) is str)
         self.assertEqual(json_dictionary, "[]")
 
-    """def test_15_3(self):
+    def test_15_3(self):
         self.set_zero()
         r1 = Rectangle(1, 2, 3, 4)
         r2 = Rectangle(5, 6, 7, 8)
         r1, r2 = r1.to_dictionary(), r2.to_dictionary()
         json_dictionary = Base.to_json_string([r1, r2])
         self.assertTrue(type(json_dictionary) is str)
-        self.assertEqual(json_dictionary, '[{"id": 1, "width": 1, \
-"height": 2, "x": 3, "y": 4}, {"id": 2, "width": 5, \
-"height": 6, "x": 7, "y": 8}]')
-"""
+        self.assertEqual(json_dictionary, '[{"x": 3, "y": 4, "id": 1,\
+ "height": 2, "width": 1}, {"x": 7, "y": 8, "id":\
+ 2, "height": 6, "width": 5}]')
+
     def test_17_1(self):
         ''' Tests for from_json_string method '''
         list_input = [

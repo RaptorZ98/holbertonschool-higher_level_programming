@@ -390,27 +390,27 @@ but 2 were given", str(e.exception))
         r.update(id=15, x=2)
         self.assertEqual(r.__str__(), "[Rectangle] (15) 2/9 - 4/5")
 
-    """def test_9_9(self):
+    def test_9_9(self):
         ''' Tests for update method '''
         r = Rectangle(10, 10, 10, 10, 10)
         r.update(1, 1, 1, 1, 1, x=8, y=9, width=4, height=5, id=89, test=10)
         self.assertEqual(r.__str__(), "[Rectangle] (1) 1/1 - 1/1")
-"""
-    """def test_9_10(self):
+
+    def test_9_10(self):
         ''' Tests for update method '''
         self.set_zero()
         r = Rectangle(2, 2)
         r.update(16, 7, x=8, y=9, width=4, height=5, id=89, test=10)
         self.assertEqual(r.__str__(), "[Rectangle] (16) 0/0 - 7/2")
-"""
-    """def test_9_11(self):
+
+    def test_9_11(self):
         ''' Tests for update method '''
         self.set_zero()
         r = Rectangle(2, 2)
         r.update(16, 7, x=8, y=9, width=4, height=5, id=89, test=10)
         r.update(id=15, x=2)
         self.assertEqual(r.__str__(), "[Rectangle] (15) 2/0 - 7/2")
-"""
+
     def test_13_1(self):
         ''' Tests for to_dictionary method '''
         r = Rectangle(1, 2, 3, 4, 5)
@@ -448,7 +448,7 @@ but 2 were given", str(e.exception))
         self.assertFalse(r1 is r2)
         self.assertTrue(r1.to_dictionary() == r2.to_dictionary())
 
-    """def test_16_1(self):
+    def test_16_1(self):
         ''' Testing save_to_file method '''
         self.set_zero()
         r1 = Rectangle(1, 2, 3, 4)
@@ -460,10 +460,10 @@ but 2 were given", str(e.exception))
             with open('Rectangle.json', 'r') as f:
                 print(f.read())
             output = string.getvalue()
-            self.assertEqual(output, '[{"id": 1, "width": 1, \
-"height": 2, "x": 3, "y": 4}, {"id": 2, "width": 5, \
-"height": 6, "x": 0, "y": 0}]\n')
-"""
+            self.assertEqual(output, '[{"x": 3, "y": 4, "id": 1, "height":\
+ 2, "width": 1}, {"x": 0, "y": 0, "id"\
+: 2, "height": 6, "width": 5}]\n')
+
     def test_16_2(self):
         ''' More tests for save_to_file method '''
         Rectangle.save_to_file([])
@@ -486,8 +486,7 @@ but 2 were given", str(e.exception))
             output = string.getvalue()
             self.assertEqual(output, "[]\n")
 
-
-"""    def test_16_7(self):
+    def test_16_7(self):
         self.set_zero()
         Rectangle.save_to_file([Rectangle(1, 1)])
         if os.path.exists('Rectangle.json'):
@@ -496,6 +495,5 @@ but 2 were given", str(e.exception))
             with open('Rectangle.json', 'r') as f:
                 print(f.read())
             output = string.getvalue()
-            self.assertEqual(output, '[{"id": 1, "width": 1, \
-"height": 1, "x": 0, "y": 0}]\n')
-"""
+            self.assertEqual(output, '[{"x": 0, "y": 0, "id"\
+: 1, "height": 1, "width": 1}]\n')
