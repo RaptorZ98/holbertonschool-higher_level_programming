@@ -12,4 +12,4 @@ class Square(Rectangle):
     def __str__(self):
         """ str of the square """
         return f"[Square] ({self.id}) {self.__x}/{self.__y} \
-- {self.__width}/{self.__height}"
+- {self.__width}"
