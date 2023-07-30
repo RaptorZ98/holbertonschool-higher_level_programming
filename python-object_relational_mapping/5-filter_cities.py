@@ -11,13 +11,14 @@ if __name__ == "__main__":
     cur = db.cursor()
     cur.execute("SELECT cities.name\
  FROM cities JOIN states ON \
-states.id = cities.state_id WHERE states.name = {argv4} \
+states.id = cities.state_id WHERE states.name = '{argv4}' \
 ORDER BY id ASC;")
     rows = cur.fetchall()
     i = 0
     for row in rows:
         if i == 0:
             print(", ", end="")
+            i = 1
         print(row, end="")
     cur.close()
     db.close()
