@@ -17,6 +17,6 @@ host:3306/{}".format(argv[1], argv[2], argv[3]), pool_pre_ping=True)
 
     with Session(engine) as session:
         query = select(State).where(State.name.like('%a%')).order_by(State.id)
-        result = session.execute(query).first()
+        result = session.execute(query).all()
     for row in result:
         print(f"{row[0].id}: {row[0].name}")
