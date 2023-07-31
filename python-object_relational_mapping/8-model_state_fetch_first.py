@@ -18,8 +18,7 @@ host:3306/{}".format(argv[1], argv[2], argv[3]), pool_pre_ping=True)
     with Session(engine) as session:
         query = select(State).order_by(State.id)
         result = session.execute(query).first()
-    for row in result:
-        if row is None:
-            print("Nothing")
-        else:
-            print(f"{row[0].id}: {row[0].name}")
+    if result is None:
+        print("Nothing")
+    else:
+        print(f"{result[0].id}: {result[0].name}")
