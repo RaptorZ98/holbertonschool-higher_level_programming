@@ -16,9 +16,9 @@ host:3306/{}".format(argv[1], argv[2], argv[3]), pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
     with Session(engine) as session:
-        query = select(State).where(State.name == f"'{argv[4]}'")
+        query = select(State).where(State.name == f"{argv[4]}")
         result = session.execute(query).first()
     if result is None:
         print("Not found")
     else:
-        print(f"{result.id}")
+        print(f"{result[0].id}")
