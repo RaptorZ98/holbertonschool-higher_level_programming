@@ -19,4 +19,4 @@ host:3306/{}".format(argv[1], argv[2], argv[3]), pool_pre_ping=True)
         query = select(State).order_by(State.id)
         result = session.execute(query).all()
     for row in result:
-        print(f"{row[0].id} : {row[0].name}")
+        print(f"{row[0].id}: {row[0].name}")
